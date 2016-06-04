@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Official Docker Repositories - Tags</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/r/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="/r/styles.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<header class="navbar navbar-fixed-top">
+    <div class="container">
+        <div class="pull-left brand float-remove-xs text-center-xs">
+            <a href="/">
+                <img src="/r/logo.svg" alt="wso2" title="wso2" class="logo">
+                <h1 class="display-block-xs">WSO2 Docker Repositories</h1>
+            </a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Repository name: {{.Name}}</h1>
+        <p class="lead">
+            <pre>docker pull dockerhub.private.wso2.com/{{.Name}}</pre>
+        </p>
+    </div>
+    <div class="row starter-template">
+        <table class="table table-striped">
+           <thead>
+               <tr>
+                   <td>Tags</td>
+               </tr>
+           </thead>
+            <tbody class="tag-container">
+                {{range .Tags}}
+                <tr>
+                    <td>{{$.Name}}:<strong>{{.}}</strong></td>
+                </tr>
+                {{end}}
+            </tbody>
+        </table>
+    </div>
+
+</div><!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/r/jquery.min.js"><\/script>')</script>
+<script src="/r/bootstrap.min.js"></script>
+</body>
+</html>
